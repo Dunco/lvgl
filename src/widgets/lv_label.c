@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file lv_label.c
  *
  */
@@ -327,7 +327,7 @@ void lv_label_get_letter_pos(const lv_obj_t * obj, uint32_t char_id, lv_point_t 
 
     uint32_t byte_id = _lv_txt_encoded_get_byte_id(txt, char_id);
 
-    /*Search the line of the index letter*/;
+    /*Search the line of the index letter*/
     while(txt[new_line_start] != '\0') {
         new_line_start += _lv_txt_get_next_line(&txt[line_start], font, letter_space, max_w, flag);
         if(byte_id < new_line_start || txt[new_line_start] == '\0')
@@ -425,7 +425,7 @@ uint32_t lv_label_get_letter_on(const lv_obj_t * obj, lv_point_t * pos_in)
 
     lv_text_align_t align = lv_obj_calculate_style_text_align(obj, LV_PART_MAIN, label->text);
 
-    /*Search the line of the index letter*/;
+    /*Search the line of the index letter*/
     while(txt[line_start] != '\0') {
         new_line_start += _lv_txt_get_next_line(&txt[line_start], font, letter_space, max_w, flag);
 
@@ -543,7 +543,7 @@ bool lv_label_is_char_under_pos(const lv_obj_t * obj, lv_point_t * pos)
     if(label->expand != 0) flag |= LV_TEXT_FLAG_EXPAND;
     if(lv_obj_get_style_width(obj, LV_PART_MAIN) == LV_SIZE_CONTENT && !obj->w_layout) flag |= LV_TEXT_FLAG_FIT;
 
-    /*Search the line of the index letter*/;
+    /*Search the line of the index letter*/
     while(txt[line_start] != '\0') {
         new_line_start += _lv_txt_get_next_line(&txt[line_start], font, letter_space, max_w, flag);
 
