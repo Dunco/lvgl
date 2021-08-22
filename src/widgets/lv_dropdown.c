@@ -90,7 +90,7 @@ const lv_obj_class_t lv_dropdownlist_class = {
 
 lv_obj_t * lv_dropdown_create(lv_obj_t * parent)
 {
-    LV_LOG_INFO("begin")
+    LV_LOG_INFO("begin");
     lv_obj_t * obj = lv_obj_class_create_obj(&lv_dropdown_class, parent);
     lv_obj_class_init_obj(obj);
     return obj;
@@ -527,7 +527,7 @@ void lv_dropdown_close(lv_obj_t * obj)
 
 static lv_obj_t * lv_dropdown_list_create(lv_obj_t * parent)
 {
-    LV_LOG_INFO("begin")
+    LV_LOG_INFO("begin");
     lv_obj_t * obj = lv_obj_class_create_obj(&lv_dropdownlist_class, parent);
     lv_obj_class_init_obj(obj);
     return obj;

@@ -90,9 +90,9 @@ void _lv_log_add(lv_log_level_t level, const char * file, int line, const char *
 #endif
 
 #if LV_LOG_LEVEL <= LV_LOG_LEVEL_INFO
-#define LV_LOG_INFO(...) _lv_log_add(LV_LOG_LEVEL_INFO, __FILE__, __LINE__, __func__, __VA_ARGS__);
+#define LV_LOG_INFO(...) _lv_log_add(LV_LOG_LEVEL_INFO, __FILE__, __LINE__, __func__, __VA_ARGS__)
 #else
-#define LV_LOG_INFO(...) do {}while(0);
+#define LV_LOG_INFO(...) do {}while(0)
 #endif
 
 #if LV_LOG_LEVEL <= LV_LOG_LEVEL_WARN
