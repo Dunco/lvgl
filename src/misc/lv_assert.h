@@ -54,19 +54,19 @@ extern "C" {
  *-----------------*/
 
 #if LV_USE_ASSERT_NULL
-#   define LV_ASSERT_NULL(p) LV_ASSERT_MSG(p != NULL, "NULL pointer");
+#   define LV_ASSERT_NULL(p) LV_ASSERT_MSG(p != NULL, "NULL pointer")
 #else
 #   define LV_ASSERT_NULL(p)
 #endif
 
 #if LV_USE_ASSERT_MALLOC
-#   define LV_ASSERT_MALLOC(p) LV_ASSERT_MSG(p != NULL, "Out of memory");
+#   define LV_ASSERT_MALLOC(p) LV_ASSERT_MSG(p != NULL, "Out of memory")
 #else
 #   define LV_ASSERT_MALLOC(p)
 #endif
 
 #if LV_USE_ASSERT_MEM_INTEGRITY
-#   define LV_ASSERT_MEM_INTEGRITY() LV_ASSERT_MSG(lv_mem_test() == LV_RES_OK, "Memory integrity error");
+#   define LV_ASSERT_MEM_INTEGRITY() LV_ASSERT_MSG(lv_mem_test() == LV_RES_OK, "Memory integrity error")
 #else
 #   define LV_ASSERT_MEM_INTEGRITY()
 #endif
