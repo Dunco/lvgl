@@ -856,8 +856,8 @@ static void integrity_walker(void* ptr, size_t size, int used, void* user)
 
 	int status = 0;
 	(void)used;
-	tlsf_insist(integ->prev_status == this_prev_status && "prev status incorrect");
-	tlsf_insist(size == this_block_size && "block size incorrect");
+	tlsf_insist(integ->prev_status == this_prev_status && "prev status incorrect")
+	tlsf_insist(size == this_block_size && "block size incorrect")
 
 	integ->prev_status = this_status;
 	integ->status += status;
@@ -883,30 +883,30 @@ int lv_tlsf_check(lv_tlsf_t tlsf)
 			/* Check that first- and second-level lists agree. */
 			if (!fl_map)
 			{
-				tlsf_insist(!sl_map && "second-level map must be null");
+				tlsf_insist(!sl_map && "second-level map must be null")
 			}
 
 			if (!sl_map)
 			{
-				tlsf_insist(block == &control->block_null && "block list must be null");
+				tlsf_insist(block == &control->block_null && "block list must be null")
 				continue;
 			}
 
 			/* Check that there is at least one free block. */
-			tlsf_insist(sl_list && "no free blocks in second-level map");
-			tlsf_insist(block != &control->block_null && "block should not be null");
+			tlsf_insist(sl_list && "no free blocks in second-level map")
+			tlsf_insist(block != &control->block_null && "block should not be null")
 
 			while (block != &control->block_null)
 			{
 				int fli, sli;
-				tlsf_insist(block_is_free(block) && "block should be free");
-				tlsf_insist(!block_is_prev_free(block) && "blocks should have coalesced");
-				tlsf_insist(!block_is_free(block_next(block)) && "blocks should have coalesced");
-				tlsf_insist(block_is_prev_free(block_next(block)) && "block should be free");
-				tlsf_insist(block_size(block) >= block_size_min && "block not minimum size");
+				tlsf_insist(block_is_free(block) && "block should be free")
+				tlsf_insist(!block_is_prev_free(block) && "blocks should have coalesced")
+				tlsf_insist(!block_is_free(block_next(block)) && "blocks should have coalesced")
+				tlsf_insist(block_is_prev_free(block_next(block)) && "block should be free")
+				tlsf_insist(block_size(block) >= block_size_min && "block not minimum size")
 
 				mapping_insert(block_size(block), &fli, &sli);
-				tlsf_insist(fli == i && sli == j && "block size indexed in wrong list");
+				tlsf_insist(fli == i && sli == j && "block size indexed in wrong list")
 				block = block->next_free;
 			}
 		}
