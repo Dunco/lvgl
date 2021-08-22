@@ -84,9 +84,9 @@ void _lv_log_add(lv_log_level_t level, const char * file, int line, const char *
  **********************/
 
 #if LV_LOG_LEVEL <= LV_LOG_LEVEL_TRACE
-#define LV_LOG_TRACE(...) _lv_log_add(LV_LOG_LEVEL_TRACE, __FILE__, __LINE__, __func__, __VA_ARGS__);
+#define LV_LOG_TRACE(...) _lv_log_add(LV_LOG_LEVEL_TRACE, __FILE__, __LINE__, __func__, __VA_ARGS__)
 #else
-#define LV_LOG_TRACE(...) do {}while(0);
+#define LV_LOG_TRACE(...) do {}while(0)
 #endif
 
 #if LV_LOG_LEVEL <= LV_LOG_LEVEL_INFO
