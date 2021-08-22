@@ -74,7 +74,7 @@ void lv_obj_del(lv_obj_t * obj)
 
     /*Handle if the active screen was deleted*/
     if(act_scr_del)  {
-        LV_LOG_WARN("the active screen was deleted")
+        LV_LOG_WARN("the active screen was deleted");
         disp->act_scr = NULL;
     }
 
@@ -292,7 +292,7 @@ lv_disp_t * lv_obj_get_disp(const lv_obj_t * obj)
         }
     }
 
-    LV_LOG_WARN("No screen found")
+    LV_LOG_WARN("No screen found");
     return NULL;
 }
 
