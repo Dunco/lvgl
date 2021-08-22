@@ -460,7 +460,7 @@ static inline void lv_style_set_size(lv_style_t * style, lv_coord_t value) {
 
 #if LV_USE_ASSERT_STYLE
 #  define LV_ASSERT_STYLE(style_p)    LV_ASSERT_MSG(style_p != NULL, "The style is NULL");          \
-                                      LV_ASSERT_MSG(style_p->sentinel == LV_STYLE_SENTINEL_VALUE, "Style is not initialized or corrupted");
+                                      LV_ASSERT_MSG(style_p->sentinel == LV_STYLE_SENTINEL_VALUE, "Style is not initialized or corrupted")
 #else
 # define LV_ASSERT_STYLE(p)
 #endif
