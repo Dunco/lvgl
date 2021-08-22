@@ -324,7 +324,7 @@ void lv_mem_buf_release(void * p)
         }
     }
 
-    LV_LOG_ERROR("p is not a known buffer")
+    LV_LOG_ERROR("p is not a known buffer");
 }
 
 /**
