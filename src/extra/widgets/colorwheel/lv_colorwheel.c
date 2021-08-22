@@ -610,7 +610,7 @@ static void fast_hsv2rgb(uint16_t h, uint8_t s, uint8_t v, uint8_t *r, uint8_t *
     if (!s) { *r = *g = *b = v; return; }
 
     uint8_t sextant = h >> 8;
-    HSV_PTR_SWAP(sextant, r, g, b); /*Swap pointers so the conversion code is the same*/
+    HSV_PTR_SWAP(sextant, r, g, b) /*Swap pointers so the conversion code is the same*/
 
     *g = v;
 
