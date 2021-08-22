@@ -360,10 +360,10 @@ LV_ATTRIBUTE_FAST_MEM void * lv_memcpy(void * dst, const void * src, size_t len)
     /*Byte copy for unaligned memories*/
     if(s_align != d_align) {
         while(len > 32) {
-            REPEAT8(COPY8);
-            REPEAT8(COPY8);
-            REPEAT8(COPY8);
-            REPEAT8(COPY8);
+            REPEAT8(COPY8)
+            REPEAT8(COPY8)
+            REPEAT8(COPY8)
+            REPEAT8(COPY8)
             len -= 32;
         }
         while(len) {
@@ -377,7 +377,7 @@ LV_ATTRIBUTE_FAST_MEM void * lv_memcpy(void * dst, const void * src, size_t len)
     if(d_align) {
         d_align = ALIGN_MASK + 1 - d_align;
         while(d_align && len) {
-            COPY8;
+            COPY8
             d_align--;
             len--;
         }
@@ -391,7 +391,7 @@ LV_ATTRIBUTE_FAST_MEM void * lv_memcpy(void * dst, const void * src, size_t len)
     }
 
     while(len > 4) {
-        COPY32;
+        COPY32
         len -= 4;
     }
 
@@ -422,7 +422,7 @@ LV_ATTRIBUTE_FAST_MEM void lv_memset(void * dst, uint8_t v, size_t len)
     if(d_align) {
         d_align = ALIGN_MASK + 1 - d_align;
         while(d_align && len) {
-            SET8(v);
+            SET8(v)
             len--;
             d_align--;
         }
@@ -433,18 +433,18 @@ LV_ATTRIBUTE_FAST_MEM void lv_memset(void * dst, uint8_t v, size_t len)
     uint32_t * d32 = (uint32_t *)d8;
 
     while(len > 32) {
-        REPEAT8(SET32(v32));
+        REPEAT8(SET32(v32))
         len -= 32;
     }
 
     while(len > 4) {
-        SET32(v32);
+        SET32(v32)
         len -= 4;
     }
 
     d8 = (uint8_t *)d32;
     while(len) {
-        SET8(v);
+        SET8(v)
         len--;
     }
 }
@@ -463,7 +463,7 @@ LV_ATTRIBUTE_FAST_MEM void lv_memset_00(void * dst, size_t len)
     if(d_align) {
         d_align = ALIGN_MASK + 1 - d_align;
         while(d_align && len) {
-            SET8(0);
+            SET8(0)
             len--;
             d_align--;
         }
@@ -471,18 +471,18 @@ LV_ATTRIBUTE_FAST_MEM void lv_memset_00(void * dst, size_t len)
 
     uint32_t * d32 = (uint32_t *)d8;
     while(len > 32) {
-        REPEAT8(SET32(0));
+        REPEAT8(SET32(0))
         len -= 32;
     }
 
     while(len > 4) {
-        SET32(0);
+        SET32(0)
         len -= 4;
     }
 
     d8 = (uint8_t *)d32;
     while(len) {
-        SET8(0);
+        SET8(0)
         len--;
     }
 }
@@ -501,7 +501,7 @@ LV_ATTRIBUTE_FAST_MEM void lv_memset_ff(void * dst, size_t len)
     if(d_align) {
         d_align = ALIGN_MASK + 1 - d_align;
         while(d_align && len) {
-            SET8(0xFF);
+            SET8(0xFF)
             len--;
             d_align--;
         }
@@ -509,18 +509,18 @@ LV_ATTRIBUTE_FAST_MEM void lv_memset_ff(void * dst, size_t len)
 
     uint32_t * d32 = (uint32_t *)d8;
     while(len > 32) {
-        REPEAT8(SET32(0xFFFFFFFF));
+        REPEAT8(SET32(0xFFFFFFFF))
         len -= 32;
     }
 
     while(len > 4) {
-        SET32(0xFFFFFFFF);
+        SET32(0xFFFFFFFF)
         len -= 4;
     }
 
     d8 = (uint8_t *)d32;
     while(len) {
-        SET8(0xFF);
+        SET8(0xFF)
         len--;
     }
 }
